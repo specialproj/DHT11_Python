@@ -15,12 +15,14 @@ try:
 	    result = instance.read()
 	    if result.is_valid():
 	        print("Last valid input: " + str(datetime.datetime.now()))
-
 	        print("Temperature: %-3.1f C" % result.temperature)
 	        print("Humidity: %-3.1f %%" % result.humidity)
+	        print("")
 
 	    time.sleep(6)
 
 except KeyboardInterrupt:
     print("Cleanup")
     GPIO.cleanup()
+
+# source: https://www.instructables.com/DHT11-Raspberry-Pi/
